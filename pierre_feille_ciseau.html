@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8"/>
+      <title>pierre feille ciseau</title> 
+	  <style>
+	   button{
+	    border-radius : 7px;
+	   }
+	   button:hover{
+	    background-color:orange;
+	    color:white;
+	   }
+	  </style>
+   </head> 
+ <body>
+     <button>pierre✊</button>
+     <button>feuille✋</button>
+     <button>ciseaux✌</button> <br><br>
+     <div id="resulta"></div>
+   <script>
+     var bouton = document.querySelectorAll("button");
+    for(let i=0;i<bouton.length;i++){
+      bouton[i].addEventListener('click',function(){
+          var joueur = bouton[i].innerHTML;
+          var machine = bouton[Math.round(Math.random()*(bouton.length-1))].innerHTML;
+        
+     if((joueur=="pierre✊"&&machine=="feuille✋")||(joueur=="feuille✋"&&machine=="ciseaux✋")||(joueur=="ciseaux✌"&&machine=="pierre✊")){
+            resulta.innerHTML = "Machine : "+machine+"<br>vous : "+joueur+"<br><br>perdue";
+        }
+     else if(machine==joueur){
+         resulta.innerHTML = "Machine : "+machine+"<br>vous : "+joueur+"<br><br>égalité";
+      }
+     else{
+            resulta.innerHTML = "Machine : "+machine+"<br>vous : "+joueur+"<br><br>gagné";
+        }
+     });
+    }
+   </script>  
+ </body>  
+</html>
